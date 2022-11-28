@@ -1,0 +1,84 @@
+<div class="row background-color">
+  <!-- Todo
+  <div class="col-4">
+    <h3 class="text-center">
+      TO-DO {{ todoArray.length - 1 > 0 ? todoArray.length - 1 : "" }}
+    </h3>
+
+    <table class="table" *ngIf="todoArray.length - 1 > 0">
+      <tr *ngFor="let todo of todoArray; index as i">
+        <td>{{ todo }}</td>
+        <button *ngIf="i > 0" (click)="moveToProgress(i)">-></button>
+      </tr>
+    </table>
+  </div>
+  InProgress
+  <div class="col-4">
+    <h3 class="text-center">INPROGRESS</h3>
+    <table class="table" *ngIf="inProgressArray">
+      <tr *ngFor="let todo of inProgressArray; index as i">
+        <button (click)="moveToTODO(i)"><-</button>
+        <td>{{ todo }}</td>
+        <button (click)="moveToCompleted(i)">-></button>
+      </tr>
+    </table>
+  </div>
+  Completed
+  <div class="col-4">
+    <h3 class="text-center">COMPLETED</h3>
+    <table class="table" *ngIf="completedArray">
+      <tr *ngFor="let todo of completedArray; index as i">
+        <button (click)="moveToInProgress(i)"><-</button>
+        <td>{{ todo }}</td>
+      </tr>
+    </table>
+  </div>
+</div> -->
+
+  <div cdkDropListGroup>
+    <div class="example-container">
+      <h2>To do</h2>
+
+      <div
+        cdkDropList
+        [cdkDropListData]="todoArray"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="example-box" *ngFor="let item of todoArray" cdkDrag>
+          {{ item }}
+        </div>
+      </div>
+    </div>
+
+    <div class="example-container">
+      <h2>In Progress</h2>
+
+      <div
+        cdkDropList
+        [cdkDropListData]="inProgressArray"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="example-box" *ngFor="let item of inProgressArray" cdkDrag>
+          {{ item }}
+        </div>
+      </div>
+    </div>
+
+    <div class="example-container">
+      <h2>Done</h2>
+
+      <div
+        cdkDropList
+        [cdkDropListData]="completedArray"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="example-box" *ngFor="let item of completedArray" cdkDrag>
+          {{ item }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
