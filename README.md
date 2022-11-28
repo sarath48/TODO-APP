@@ -1,5 +1,7 @@
 # TodoApp
 
+workflow --- add a task it will go to TODO section by default and you can drag it to inprogress or done section.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
 
 ## Development server
